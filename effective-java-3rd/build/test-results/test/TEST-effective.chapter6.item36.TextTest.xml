@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="effective.chapter6.item36.TextTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-10-10T16:00:10" hostname="gimgyutaeui-MacBookPro.local" time="0.016">
+  <properties/>
+  <testcase name="unmodifiableSet은 불변으로 만들어 준다." classname="effective.chapter6.item36.TextTest" time="0.016"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
