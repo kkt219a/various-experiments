@@ -5,7 +5,7 @@ import java.util.List;
 
 // 반복 가능한 애너테이션을 사용한 프로그램 (244쪽)
 public class Sample4 {
-    @ExceptionTest(ArithmeticException.class)
+    @ExceptionTest(value = ArithmeticException.class)
     public static void m1() {  // 성공해야 한다.
         int i = 0;
         i = i / i;
@@ -18,6 +18,7 @@ public class Sample4 {
     }
 
     @ExceptionTest(ArithmeticException.class)
+    @ExceptionTestContainer(value = {@ExceptionTest(IndexOutOfBoundsException.class), @ExceptionTest(NullPointerException.class)})
     public static void m3() { }  // 실패해야 한다. (예외가 발생하지 않음)
 
     // 코드 39-9 반복 가능 애너테이션을 두 번 단 코드 (244쪽)

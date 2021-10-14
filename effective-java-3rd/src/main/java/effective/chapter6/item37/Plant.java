@@ -4,7 +4,7 @@ import java.util.*;
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.toSet;
 
-class Plant {
+public class Plant {
     enum LifeCycle { ANNUAL, PERENNIAL, BIENNIAL }
 
     final String name;
@@ -29,6 +29,11 @@ class Plant {
                 new Plant("로즈마리", LifeCycle.PERENNIAL)
         };
 
+        Plant[] forMapCount = {
+                new Plant("바질",    LifeCycle.ANNUAL),
+                new Plant("딜",      LifeCycle.ANNUAL),
+                new Plant("캐러웨이", LifeCycle.BIENNIAL),
+        };
         // 코드 37-1 ordinal()을 배열 인덱스로 사용 - 따라 하지 말 것! (226쪽)
         Set<Plant>[] plantsByLifeCycleArr =
                 (Set<Plant>[]) new Set[Plant.LifeCycle.values().length];
@@ -38,8 +43,7 @@ class Plant {
             plantsByLifeCycleArr[p.lifeCycle.ordinal()].add(p);
         // 결과 출력
         for (int i = 0; i < plantsByLifeCycleArr.length; i++) {
-            System.out.printf("%s: %s%n",
-                    Plant.LifeCycle.values()[i], plantsByLifeCycleArr[i]);
+            System.out.printf("%s: %s%n", Plant.LifeCycle.values()[i], plantsByLifeCycleArr[i]);
         }
 
         // 코드 37-2 EnumMap을 사용해 데이터와 열거 타입을 매핑한다. (227쪽)
@@ -47,20 +51,22 @@ class Plant {
                 new EnumMap<>(Plant.LifeCycle.class);
         for (Plant.LifeCycle lc : Plant.LifeCycle.values())
             plantsByLifeCycle.put(lc, new HashSet<>());
-        for (Plant p : garden)
+        for (Plant p : forMapCount)
             plantsByLifeCycle.get(p.lifeCycle).add(p);
-        System.out.println();
+        System.out.println("EnumMap 버전");
         System.out.println(plantsByLifeCycle);
-        System.out.println();
 
-        Map<LifeCycle, List<Plant>> collect = Arrays.stream(garden)
+        Map<LifeCycle, List<Plant>> collect = Arrays.stream(forMapCount)
                 .collect(groupingBy(p -> p.lifeCycle));
+
         // 코드 37-3 스트림을 사용한 코드 1 - EnumMap을 사용하지 않는다! (228쪽)
-        System.out.println(Arrays.stream(garden)
+        System.out.println("스트림 HashMap 버전");
+        System.out.println(Arrays.stream(forMapCount)
                 .collect(groupingBy(p -> p.lifeCycle)));
 
         // 코드 37-4 스트림을 사용한 코드 2 - EnumMap을 이용해 데이터와 열거 타입을 매핑했다. (228쪽)
-        System.out.println(Arrays.stream(garden)
+        System.out.println("스트림 EnumMap 버전");
+        System.out.println(Arrays.stream(forMapCount)
                 .collect(groupingBy(p -> p.lifeCycle,
                         () -> new EnumMap<>(LifeCycle.class), toSet())));
     }
