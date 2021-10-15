@@ -41,5 +41,10 @@ public class Bigram implements Serializable {
             for (char ch = 'a'; ch <= 'z'; ch++)
                 s.add(new Bigram(ch, ch));
         System.out.println(s.size());
+
+        ChildClass childClass = new ChildClass();
+        childClass.giveFood();
+        childClass.giveMoney();
+        childClass.giveHouse();
     }
 }
