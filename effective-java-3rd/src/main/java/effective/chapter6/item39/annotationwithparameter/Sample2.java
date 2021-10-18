@@ -5,7 +5,7 @@ import java.util.*;
 
 // 코드 39-5 매개변수 하나짜리 애너테이션을 사용한 프로그램 (241쪽)
 public class Sample2 {
-    @ExceptionTest(ArithmeticException.class)
+    @ExceptionTest(KTaeException.class)
     public static void m1() {  // 성공해야 한다.
         int i = 0;
         i = i / i;

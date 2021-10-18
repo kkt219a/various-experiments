@@ -1,27 +1,29 @@
 package effective.chapter6.item39.annotationwithparameter;
 
 import effective.chapter6.item39.markerannotation.Test;
+import effective.chapter6.item39.annotationwithparameter.*;
 import java.lang.reflect.*;
 
 // 마커 애너테이션과 매개변수 하나짜리 애너태이션을 처리하는 프로그램 (241-242쪽)
 public class RunTests {
     public static void main(String[] args) throws Exception {
+        Thread.sleep(20000);
         int tests = 0;
         int passed = 0;
         Class<?> testClass = Class.forName("effective.chapter6.item39.annotationwithparameter.Sample2");
         for (Method m : testClass.getDeclaredMethods()) {
-            if (m.isAnnotationPresent(Test.class)) {
-                tests++;
-                try {
-                    m.invoke(null);
-                    passed++;
-                } catch (InvocationTargetException wrappedExc) {
-                    Throwable exc = wrappedExc.getCause();
-                    System.out.println(m + " 실패: " + exc);
-                } catch (Exception exc) {
-                    System.out.println("잘못 사용한 @Test: " + m);
-                }
-            }
+//            if (m.isAnnotationPresent(Test.class)) {
+//                tests++;
+//                try {
+//                    m.invoke(null);
+//                    passed++;
+//                } catch (InvocationTargetException wrappedExc) {
+//                    Throwable exc = wrappedExc.getCause();
+//                    System.out.println(m + " 실패: " + exc);
+//                } catch (Exception exc) {
+//                    System.out.println("잘못 사용한 @Test: " + m);
+//                }
+//            }
 
             if (m.isAnnotationPresent(ExceptionTest.class)) {
                 tests++;
