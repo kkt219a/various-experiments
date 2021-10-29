@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="effective.chapter6.item38.OperationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-10-14T10:29:12" hostname="gimgyutaeui-MacBookPro.local" time="0.019">
-  <properties/>
-  <testcase name="특정 연산에서 EnumSet과 EnumMap을 사용할 수 없다." classname="effective.chapter6.item38.OperationTest" time="0.019"/>
-  <system-out><![CDATA[operation = /
-operation = ^
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

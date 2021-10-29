@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="custom_sorting.SortTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-10-25T11:10:19" hostname="gimgyutcBookPro" time="7.487">
+  <properties/>
+  <testcase name="버블 정렬" classname="custom_sorting.SortTest" time="5.432"/>
+  <testcase name="삽입 정렬" classname="custom_sorting.SortTest" time="0.341"/>
+  <testcase name="선택 정렬" classname="custom_sorting.SortTest" time="1.688"/>
+  <testcase name="합병 정렬" classname="custom_sorting.SortTest" time="0.012"/>
+  <testcase name="퀵 정렬" classname="custom_sorting.SortTest" time="0.011"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
