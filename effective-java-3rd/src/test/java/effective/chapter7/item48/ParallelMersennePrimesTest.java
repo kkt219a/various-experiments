@@ -13,14 +13,14 @@ class ParallelMersennePrimesTest {
 
     @Test
     public void parallelStream() throws Exception {
-        IntStream.rangeClosed(0,10_000).boxed().parallel()
-                        .forEach(System.out::println);
+        IntStream.rangeClosed(0,25_000_000).boxed().parallel()
+                        .forEach((a)-> a+=1);
     }
 
     @Test
     public void parallelStreamOrdered() throws Exception {
-        IntStream.rangeClosed(0,10_000).boxed().parallel()
-                .forEachOrdered(System.out::println);
+        IntStream.rangeClosed(0,25_000_000).boxed().parallel()
+                .forEachOrdered((a)-> a+=1);
     }
 
 //    @Test
