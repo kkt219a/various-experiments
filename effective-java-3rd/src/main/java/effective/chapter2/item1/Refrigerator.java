@@ -59,7 +59,7 @@ public class Refrigerator {
     }
 
     public static void main(String[] args) throws ClassNotFoundException {
-        Class vectorClass = Class.forName("effective.item1.domain.Test");
+        Class vectorClass = Class.forName("effective.chapter2.item1.Refrigerator");
         Method[] methods = vectorClass.getDeclaredMethods();
         Arrays.stream(methods).forEach(System.out::println);
         System.out.println("methods.length = " + methods.length);
