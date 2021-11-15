@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class TryException {
+public class ForProfit {
     public static void main(String[] args) {
         //1
         List<Integer> lists = IntStream.range(0,3).boxed().collect(Collectors.toList());
