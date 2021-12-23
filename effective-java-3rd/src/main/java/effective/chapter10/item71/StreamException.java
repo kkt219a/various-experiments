@@ -25,8 +25,8 @@ public class StreamException {
 			})
 			.collect(Collectors.toList());
 
-		List<Integer> notHandling = integers.stream()
-			.filter(StreamException::raiseCheckedException)
-			.collect(Collectors.toList());
+		// List<Integer> notHandling = integers.stream()
+		// 	.filter(StreamException::raiseCheckedException)
+		// 	.collect(Collectors.toList());
 	}
 }
