@@ -20,6 +20,6 @@ public class VolMain {
 		Thread.sleep(10);
 		//TimeUnit.SECONDS.sleep(1);
 		stopRequested = true;
-		stop2 = true;
+		//stop2 = true;
 	}
 }
