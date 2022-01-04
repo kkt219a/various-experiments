@@ -11,28 +11,26 @@ public class VolMain3 {
 		boolean v = false;
 
 		Thread backgroundThread = new Thread(() -> {
-			//val을 read, nonval을 write
-			boolean a = stopRequested2;
 			try {
-				Thread.sleep(100);
+				Thread.sleep(1000);
+				//val을 read, nonval을 write
+				stopRequested3 = true;
+				boolean a = stopRequested2;
+				//stopRequested3 = true;
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			stopRequested3 = true;
 		});
 
 		Thread backgroundThread2 = new Thread(() -> {
-			//nonval을 read, val을 write
-			boolean a = stopRequested3;
-			try {
-				Thread.sleep(100);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-			System.out.println(stopRequested3 + " " + a);
-			stopRequested2 = true;
+				//nonval을 read, val을 write
+				// boolean a = stopRequested3;
+				// System.out.println(stopRequested3 + " " + a);
+				while(!stopRequested3){
+					stopRequested2 = false;
+				}
+				stopRequested2 = true;
 		});
-		// non-val 변경 전
 		backgroundThread.start();
 		Thread.sleep(10);
 		backgroundThread2.start();
