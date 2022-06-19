@@ -1,5 +1,7 @@
 package exception.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -8,7 +10,7 @@ import exception.domain.ProductRepository;
 import lombok.RequiredArgsConstructor;
 
 @Service
-@Transactional()
+@Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class ProductService {
 	private final ProductRepository productRepository;
@@ -33,8 +35,12 @@ public class ProductService {
 		productRepository.save(product);
 	}
 
-	private Product findByProduct(Long id) {
+	public Product findByProduct(Long id) {
 		return productRepository.findById(id)
 			.orElseThrow(RuntimeException::new);
+	}
+
+	public List<Product> findAll() {
+		return productRepository.findAll();
 	}
 }
