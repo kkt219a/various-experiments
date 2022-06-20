@@ -5,6 +5,15 @@ import java.util.Objects;
 public class Product extends ParentProduct implements ProductInterface {
 	private Integer price;
 	private String name;
+
+	public Integer getPrice() {
+		return price;
+	}
+
+	public String getName() {
+		return name;
+	}
+
 	public Product(Integer price, String name) {
 		this.price = price;
 		this.name = name;
