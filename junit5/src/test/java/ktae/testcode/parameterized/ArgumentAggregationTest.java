@@ -1,4 +1,4 @@
-package parameterized;
+package ktae.testcode.parameterized;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.extension.ParameterContext;

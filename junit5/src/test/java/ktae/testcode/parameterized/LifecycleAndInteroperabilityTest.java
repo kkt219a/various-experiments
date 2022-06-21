@@ -1,4 +1,4 @@
-package parameterized;
+package ktae.testcode.parameterized;
 
 import org.junit.jupiter.api.TestReporter;
 import org.junit.jupiter.params.ParameterizedTest;

@@ -1,4 +1,4 @@
-package parameterized;
+package ktae.testcode.parameterized;
 
 import static org.junit.jupiter.params.provider.Arguments.*;
 

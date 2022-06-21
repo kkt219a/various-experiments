@@ -1,4 +1,4 @@
-package ktae.repeated;
+package ktae.testcode.repeated;
 
 import static org.junit.jupiter.api.Assertions.*;
 
