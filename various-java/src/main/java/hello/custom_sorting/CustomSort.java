@@ -1,4 +1,4 @@
-package custom_sorting;
+package hello.custom_sorting;
 
 import java.util.Arrays;
 

@@ -1,11 +1,8 @@
-package custom_sorting;
+package hello.custom_sorting;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import java.util.Arrays;
-
 
 class SortTest {
     private final int[] arrays = new int[60000];
