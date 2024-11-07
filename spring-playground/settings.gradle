@@ -1,0 +1,4 @@
+rootProject.name = 'spring-playground'
+
+include 'mvc:item-gateway'
+include 'spring-rest-docs'
